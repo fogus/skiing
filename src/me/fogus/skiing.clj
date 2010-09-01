@@ -41,20 +41,6 @@
 (defn U [f]
   (f f))
 
-(comment
-  (deftest- can-U-fixed-point
-    (let [fct (fn [f]
-                (fn [n] 
-                  (if (zero? n)
-                    1
-                    (* n ((f f) (- n 1))))))]
-      (is (= ((U fct) 3) 6))
-      (is (= 120 ((U (fn [f] 
-                       (fn [n] 
-                         (if (zero? n)
-                           1
-                           (* n ((f f) (- n 1))))))) 5))))))
-
 (defn curry2 [f]
   (fn [a]
     (fn [b] (f a b))))
