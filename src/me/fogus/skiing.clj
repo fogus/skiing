@@ -11,7 +11,7 @@
 ;; Kxy → x
 (defn K [x]
   (fn [y]
-    x))
+    x)) 
 
 (def kestrel K)
 
@@ -72,7 +72,13 @@
 
 (def mockingbird M)
 
- 
+
+(defn T [& args]
+  (reduce #(%2 %1) args))
+
+(def thrush T)
+
+
 (defn U [f]
   (f f))
 
@@ -98,10 +104,6 @@
   [& args]
   ((apply juxt (butlast args))
    (last args)))
-
-
-(cleave 42 int str)
-((juxt int str) 42)
 
 (defn cleave2
   [x & fns]
