@@ -13,7 +13,7 @@
 
 ;; Kxy → x
 (defn K
-  "The constant combinator.  Similar to Clojure's `constantly` and Haskell's `pure`."
+  "The constant combinator.  Similar to Clojure's `constantly` and Haskell's `const`."
   [x]
   (fn [y]
     x)) 
@@ -32,7 +32,7 @@
 
 ;; Bfgx → f(gx)
 (defn B
-  "The composition of f and g.  This is akin to the `<$>` operator in Haskell."
+  "The composition of f and g.  This is akin to the `.` operator in Haskell."
   [f]
   (fn [g]
     (fn [x]
@@ -54,7 +54,7 @@
 
 ;; Wfx → fxx
 (defn W
-  "Dups the arg b.  This is similar to Haskell's `join`."
+  "Dups the arg b.  This isn't a builtin in Haskell, but would be defined `\f x -> f x x`."
   [f]
   (fn [x]
     ((f x) x)))
@@ -64,6 +64,7 @@
 
 
 (defn Y [r]
+  "The Y combinator.  Similar to Haskell's fix combinator `fix f = f (fix f)`."
   ((fn [f] (f f))
    (fn [f]
      (r 
