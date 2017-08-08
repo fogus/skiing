@@ -1,7 +1,3 @@
-(defproject skiing "0.0.1"
+(defproject fogus/skiing "0.0.2"
   :description "a combinator zoo"
-  :dependencies [[org.clojure/clojure "1.5.1"]]
-  :dev-dependencies [[jline "0.9.94"]
-                     [swank-clojure "1.3.3"]
-                     [marginalia "0.6.1"]
-                     [lein-marginalia "0.6.0"]])
+  :dependencies [[org.clojure/clojure "1.8.0"]])
