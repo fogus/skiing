@@ -1,4 +1,4 @@
-(ns skiing.test.core
+(ns skiing.core-test
   (:use [me.fogus.skiing] :reload)
   (:use [clojure.test]))
 
